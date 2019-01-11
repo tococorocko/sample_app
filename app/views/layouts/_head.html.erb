@@ -1,10 +1,12 @@
 <head>
+  <!-- add .ico to app/assets/images -->
   <%= favicon_link_tag %>
+  <!-- defined in apps/helpers/application_helper || proved see i.e. about.html.erb -->
   <title><%= full_title(yield(:title)) %></title>
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag    'application', media: 'all',
                                             'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <!-- Partial for older IE browser -->
   <%= render 'layouts/shim' %>
-
 </head>
