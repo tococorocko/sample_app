@@ -8,4 +8,5 @@ module ApplicationHelper
       page_title + ' | ' + base_title
     end
   end
+  # Test under test/helpers/application_helper_test.rb
 end
