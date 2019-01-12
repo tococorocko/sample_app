@@ -8,5 +8,8 @@ class User < ApplicationRecord
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
 
-  has_secure_password
+  # add password digest column to user mdoel with migration, add gem 'bcrypt'
+  has_secure_password # then add password to setup method in user_test.rb
+  # more pw validations, see tests
+  validates :password, presence: true, length: { minimum: 6 }
 end
