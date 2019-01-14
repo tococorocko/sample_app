@@ -8,6 +8,11 @@ Rails.application.routes.draw do
   # get an post to same custom route
   get '/signup', to: 'users#new' # , as: 'new_user' (possibilty!)
   post '/signup', to: 'users#create'
+  # Session Controller for handling stateless HTTP with cookies
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
+
   resources :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
