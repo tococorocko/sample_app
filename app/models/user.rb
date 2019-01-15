@@ -12,4 +12,11 @@ class User < ApplicationRecord
   has_secure_password # then add password to setup method in user_test.rb
   # more pw validations, see tests
   validates :password, presence: true, length: { minimum: 6 }
+
+  # Returns the hash digest of the given string.
+  def User.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+                                                  BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost: cost)
+  end
 end
