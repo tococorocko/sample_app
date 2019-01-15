@@ -11,7 +11,7 @@ class User < ApplicationRecord
   # add password digest column to user mdoel with migration, add gem 'bcrypt'
   has_secure_password # then add password to setup method in user_test.rb
   # more pw validations, see tests
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
   # Returns the hash digest of the given string.
   def User.digest(string)
