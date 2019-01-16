@@ -9,7 +9,8 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    # requires Paginate Gem!
+    @users = User.paginate(page: params[:page])
   end
 
   def new
