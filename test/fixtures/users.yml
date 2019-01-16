@@ -2,7 +2,7 @@ toco:
   name: Toco Corocko
   email: tococorocko@gmail.com
   password_digest: <%= User.digest('password') %>
-    admin: true
+  admin: true
 
 alex:
   name: Alex Bronzedash
