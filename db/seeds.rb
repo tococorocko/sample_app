@@ -13,11 +13,19 @@ puts "..."
 User.create!(name:  "Toco Corocko",
              email: "luccakaiser@gmail.com",
              password:              "foobar",
-             password_confirmation: "foobar")
+             password_confirmation: "foobar",
+             admin: true)
+
+User.create!(name:  "Alex",
+             email: "alex@gmail.com",
+             password:              "foobar",
+             password_confirmation: "foobar",
+             admin: false)
+
 puts "create 100 Faker-users"
 puts "..."
 99.times do |n|
-  name  = Faker::Name.name
+  name  = Faker::HarryPotter.character
   email = "example-#{n+1}@sample-app.org"
   password = "password"
   User.create!(name:  name,
