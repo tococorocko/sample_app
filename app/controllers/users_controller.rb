@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
   def show
     # see before_action
+    @microposts = @user.microposts.paginate(page: params[:page])
   end
 
   def index
