@@ -7,8 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+Micropost.destroy_all
 
-puts 'deleted all users'
+puts 'deleted all users and Microposts'
 puts "..."
 User.create!(name:  "Toco Corocko",
              email: "luccakaiser@gmail.com",
@@ -32,6 +33,15 @@ puts "..."
                email: email,
                password:              password,
                password_confirmation: password)
+end
+
+puts "create Microposts"
+puts "..."
+
+users = User.order(:created_at).take(6)
+50.times do
+  content = Faker::Lorem.sentence(5)
+  users.each { |user| user.microposts.create!(content: content) }
 end
 
 puts 'Seed complete!'
