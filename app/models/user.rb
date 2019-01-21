@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :microposts
+  has_many :microposts, dependent: :destroy
 
   # Callback to downcase email befor saving it to the db
   before_save { self.email = email.downcase }
