@@ -4,6 +4,9 @@ class Micropost < ApplicationRecord
   # lambda to sort messages!
   default_scope -> { order(created_at: :desc) }
 
+  # CarrierWave method
+  mount_uploader :picture, PictureUploader
+
   validates :user_id, presence: true
   validates :content, presence: true, length: { maximum: 140 }
 end
