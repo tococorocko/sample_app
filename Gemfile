@@ -12,6 +12,10 @@ gem 'bcrypt'
 # for seeds
 gem 'faker'
 
+# Image Uploader
+gem 'carrierwave',             '1.2.2'
+gem 'mini_magick',             '4.7.0'
+
 # to paginate index!
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
@@ -73,6 +77,7 @@ end
 
 group :production do
   gem 'pg', '0.18.4'
+  gem 'fog', '1.42'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
